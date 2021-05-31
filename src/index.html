@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>BIU UI Components</title>
 
     <script type="module" src="/build/biu-components.esm.js"></script>
     <script nomodule src="/build/biu-components.js"></script>
@@ -12,7 +12,41 @@
     :root {
       font-family: sans-serif;
     }
+    .select {
+      max-width: 150px;
+    }
+    .components {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .component {
+      margin-right: 500px;
+    }
   </style>
-  <body>
-  </body>
+  <div class="components">
+    <div class="component">
+      <div class="select">
+        <biu-select></biu-select>
+      </div>
+    </div>
+    <div class="component">
+      <biu-calendar></biu-calendar>
+    </div>
+    <div class="component">
+      <biu-checkbox></biu-checkbox>
+    </div>
+    <div class="component">
+      <biu-button></biu-button>
+    </div>
+    <div class="component">
+      <biu-dropdown></biu-dropdown>
+    </div>
+    <div class="component">
+      <biu-search-bar></biu-search-bar>
+    </div>
+    <div class="component">
+      <biu-a></biu-a>
+    </div>
+  </div>
+  <body></body>
 </html>

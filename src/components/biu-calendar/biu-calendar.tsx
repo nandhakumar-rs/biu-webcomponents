@@ -1,6 +1,7 @@
 import { Component, Prop, h, State, Watch, Event, EventEmitter } from '@stencil/core';
 import LeftArrow from '../../assets/left-arrow.svg';
 import RightArrow from '../../assets/right-arrow.svg';
+import CalendarIcon from '../../assets/calendar.svg';
 import { getDatesForMonth, isDateBetween, getMomentDate, formatDate } from '../../utils/utils';
 import * as _ from 'moment';
 const moment = (_ as any).default;
@@ -11,9 +12,9 @@ const moment = (_ as any).default;
 })
 export class BiuCalendar {
   @Prop({ reflect: true }) label = 'Calendar';
-  @Prop({ reflect: true }) headerLabel = 'Month';
-  @Prop({ reflect: true }) dayHeaders = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-  @Prop({ reflect: true }) months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  @Prop({ reflect: true, mutable: true }) headerLabel?: string = 'Month';
+  @Prop({ reflect: true, mutable: true }) dayHeaders?: string[] = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  @Prop({ reflect: true, mutable: true }) monthHeaders?: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   @State() currentYear = null;
   @State() currentMonth = null;
@@ -70,7 +71,7 @@ export class BiuCalendar {
     if (date !== NaN && this.startDate && !this.endDate) {
       this.endDate = date;
       this.onDateSelection.emit({ startDate: this.startDate, endDate: this.endDate });
-      this._toggleCalendar()
+      this._toggleCalendar();
       return;
     }
     if (date !== NaN && !this.startDate) {
@@ -128,12 +129,13 @@ export class BiuCalendar {
           {this.label}
           <div class={`biu-calendar__label-highlight ${this.isCalendarActive ? 'biu-calendar__label-highlight--active' : 'biu-calendar__label-highlight--inactive'}`}></div>
         </p>
+        <img class="biu-calendar__icon" src={CalendarIcon} />
         {this.showCalendar && (
           <div class="biu-calendar__panel">
             <div class="biu-calendar__panel-header">
               <img src={LeftArrow} onClick={this._previousMonth} />
               <p class="biu-calendar__panel-header-label">
-                {this.currentYear} {this.months[this.currentMonth - 1]}
+                {this.currentYear} {this.monthHeaders[this.currentMonth - 1]}
               </p>
               <img onClick={this._nextMonth} src={RightArrow} />
             </div>

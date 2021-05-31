@@ -1,6 +1,6 @@
 {
   "name": "biu-components",
-  "version": "0.0.1",
+  "version": "0.0.25",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@stencil/core": "^2.0.1",
+    "@stencil/react-output-target": "0.0.9",
     "@stencil/sass": "^1.4.1",
+    "dayjs": "^1.10.5",
     "moment": "^2.29.1",
     "node-sass": "^6.0.0"
   },

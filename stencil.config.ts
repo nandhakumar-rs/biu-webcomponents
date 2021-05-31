@@ -1,9 +1,15 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'biu-components',
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'biu-components',
+      proxiesFile: '../biu-components-react/src/components.ts',
+      includeDefineCustomElements: true,
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
@@ -11,13 +17,10 @@ export const config: Config = {
     {
       type: 'dist-custom-elements-bundle',
     },
-    {
-      type: 'docs-readme',
-    },
-    {
-      type: 'www',
-      serviceWorker: null, // disable service workers
-    },
+    // {
+    //   type: 'www',
+    //   serviceWorker: null, // disable service workers
+    // },
   ],
   plugins: [
     sass()

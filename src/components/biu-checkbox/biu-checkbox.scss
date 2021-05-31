@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    width: 100%;
+    
+  }  
+
+.biu-checkbox {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   
+    &__label {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.06;
+    }
+
+    &__check-mark {
+        height: 24px;
+        width: 24px;
+        border-radius: 3px;
+        border: solid 1px #006937;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    &__check-mark-icon {
+        width: 15px;
+    }
+}

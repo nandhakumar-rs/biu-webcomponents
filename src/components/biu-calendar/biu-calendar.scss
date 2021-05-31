@@ -3,11 +3,17 @@
   width: max-content;
 }
 
-
-
 .biu-calendar {
   position: relative;
   transition: all 0.3s ease;
+  z-index: 1000;
+  flex-direction: row-reverse;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin: 0 8px;
+  }
 
   &__label {
     font-size: 1rem;
@@ -17,6 +23,8 @@
     color: #003535;
     display: inline;
     position: relative;
+    margin: 0;
+
   }
 
   &__label-highlight {
@@ -44,7 +52,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 32px;
+    top: 40px;
+    z-index: 1000;
   }
 
   &__panel-header {

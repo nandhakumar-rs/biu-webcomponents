@@ -6,41 +6,149 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BiuA {
+        "isActive"?: boolean;
+        "label"?: string;
+    }
+    interface BiuButton {
+        "label"?: string;
+    }
     interface BiuCalendar {
-        "dayHeaders": string[];
-        "headerLabel": string;
+        "dayHeaders"?: string[];
+        "headerLabel"?: string;
         "label": string;
-        "months": string[];
+        "monthHeaders"?: string[];
+    }
+    interface BiuCheckbox {
+        "checked"?: boolean;
+        "label"?: string;
+    }
+    interface BiuDropdown {
+        "icon"?: string;
+        "label"?: string;
+        "options"?: string | object | any;
+    }
+    interface BiuSearchBar {
+        "defaultValue"?: string;
+        "placeholder"?: string;
+    }
+    interface BiuSelect {
+        "defaultValue"?: string | object | any;
+        "options"?: string | object | any;
     }
 }
 declare global {
+    interface HTMLBiuAElement extends Components.BiuA, HTMLStencilElement {
+    }
+    var HTMLBiuAElement: {
+        prototype: HTMLBiuAElement;
+        new (): HTMLBiuAElement;
+    };
+    interface HTMLBiuButtonElement extends Components.BiuButton, HTMLStencilElement {
+    }
+    var HTMLBiuButtonElement: {
+        prototype: HTMLBiuButtonElement;
+        new (): HTMLBiuButtonElement;
+    };
     interface HTMLBiuCalendarElement extends Components.BiuCalendar, HTMLStencilElement {
     }
     var HTMLBiuCalendarElement: {
         prototype: HTMLBiuCalendarElement;
         new (): HTMLBiuCalendarElement;
     };
+    interface HTMLBiuCheckboxElement extends Components.BiuCheckbox, HTMLStencilElement {
+    }
+    var HTMLBiuCheckboxElement: {
+        prototype: HTMLBiuCheckboxElement;
+        new (): HTMLBiuCheckboxElement;
+    };
+    interface HTMLBiuDropdownElement extends Components.BiuDropdown, HTMLStencilElement {
+    }
+    var HTMLBiuDropdownElement: {
+        prototype: HTMLBiuDropdownElement;
+        new (): HTMLBiuDropdownElement;
+    };
+    interface HTMLBiuSearchBarElement extends Components.BiuSearchBar, HTMLStencilElement {
+    }
+    var HTMLBiuSearchBarElement: {
+        prototype: HTMLBiuSearchBarElement;
+        new (): HTMLBiuSearchBarElement;
+    };
+    interface HTMLBiuSelectElement extends Components.BiuSelect, HTMLStencilElement {
+    }
+    var HTMLBiuSelectElement: {
+        prototype: HTMLBiuSelectElement;
+        new (): HTMLBiuSelectElement;
+    };
     interface HTMLElementTagNameMap {
+        "biu-a": HTMLBiuAElement;
+        "biu-button": HTMLBiuButtonElement;
         "biu-calendar": HTMLBiuCalendarElement;
+        "biu-checkbox": HTMLBiuCheckboxElement;
+        "biu-dropdown": HTMLBiuDropdownElement;
+        "biu-search-bar": HTMLBiuSearchBarElement;
+        "biu-select": HTMLBiuSelectElement;
     }
 }
 declare namespace LocalJSX {
+    interface BiuA {
+        "isActive"?: boolean;
+        "label"?: string;
+        "onBiuOnClick"?: (event: CustomEvent<any>) => void;
+    }
+    interface BiuButton {
+        "label"?: string;
+        "onBiuOnClick"?: (event: CustomEvent<any>) => void;
+    }
     interface BiuCalendar {
         "dayHeaders"?: string[];
         "headerLabel"?: string;
         "label"?: string;
-        "months"?: string[];
+        "monthHeaders"?: string[];
         "onBiuOnDateSelection"?: (event: CustomEvent<any>) => void;
     }
+    interface BiuCheckbox {
+        "checked"?: boolean;
+        "label"?: string;
+        "onBiuOnCheck"?: (event: CustomEvent<any>) => void;
+    }
+    interface BiuDropdown {
+        "icon"?: string;
+        "label"?: string;
+        "onBiuOnOptionSelect"?: (event: CustomEvent<any>) => void;
+        "options"?: string | object | any;
+    }
+    interface BiuSearchBar {
+        "defaultValue"?: string;
+        "onBiuOnChange"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
+    }
+    interface BiuSelect {
+        "defaultValue"?: string | object | any;
+        "onBiuOnOptionSelect"?: (event: CustomEvent<any>) => void;
+        "options"?: string | object | any;
+    }
     interface IntrinsicElements {
+        "biu-a": BiuA;
+        "biu-button": BiuButton;
         "biu-calendar": BiuCalendar;
+        "biu-checkbox": BiuCheckbox;
+        "biu-dropdown": BiuDropdown;
+        "biu-search-bar": BiuSearchBar;
+        "biu-select": BiuSelect;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "biu-a": LocalJSX.BiuA & JSXBase.HTMLAttributes<HTMLBiuAElement>;
+            "biu-button": LocalJSX.BiuButton & JSXBase.HTMLAttributes<HTMLBiuButtonElement>;
             "biu-calendar": LocalJSX.BiuCalendar & JSXBase.HTMLAttributes<HTMLBiuCalendarElement>;
+            "biu-checkbox": LocalJSX.BiuCheckbox & JSXBase.HTMLAttributes<HTMLBiuCheckboxElement>;
+            "biu-dropdown": LocalJSX.BiuDropdown & JSXBase.HTMLAttributes<HTMLBiuDropdownElement>;
+            "biu-search-bar": LocalJSX.BiuSearchBar & JSXBase.HTMLAttributes<HTMLBiuSearchBarElement>;
+            "biu-select": LocalJSX.BiuSelect & JSXBase.HTMLAttributes<HTMLBiuSelectElement>;
         }
     }
 }

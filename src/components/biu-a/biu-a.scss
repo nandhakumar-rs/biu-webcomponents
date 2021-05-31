@@ -1,0 +1,27 @@
+.biu-a {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  cursor: pointer;
+  color: #003535;
+  display: inline;
+  position: relative;
+  margin: 0;
+
+
+
+  &__highlight {
+    height: 2px;
+    background: #78cde6;
+    transition: all 0.3s ease;
+    position: absolute;
+
+    &--active {
+      width: 100%;
+    }
+
+    &--inactive {
+      width: 0;
+    }
+  }
+}

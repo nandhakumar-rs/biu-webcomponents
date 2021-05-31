@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.4" height="16.396" viewBox="0 0 16.4 16.396">
+    <defs>
+        <style>
+            .cls-3,.cls-4{fill:none;stroke-miterlimit:10;stroke:#01280f;stroke-linecap:round}.cls-4{stroke:#0b6937}
+        </style>
+    </defs>
+    <g id="icons_interests_56_calendar" transform="translate(.5 .5)">
+        <g id="icon_24_calendar">
+            <g id="Group_7">
+                <g id="calendar-add">
+                    <path id="Path" fill="none" stroke="#01280f" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" d="M0 0h15.4v13.685H0z" transform="translate(0 1.711)"/>
+                    <path id="Path-2" fill="none" stroke="#01280f" stroke-linecap="square" stroke-miterlimit="10" d="M15.4.983H0" transform="translate(0 4.149)"/>
+                    <path id="Path-3" d="M.983 1.711V0" class="cls-3" transform="translate(2.439)"/>
+                    <path id="Path-4" d="M.983 1.711V0" class="cls-3" transform="translate(10.995)"/>
+                </g>
+                <path id="Path_8" d="M0 .572h9.875" class="cls-4" transform="translate(2.943 7.198)"/>
+                <path id="Path_8_Copy" d="M0 .572h9.875" class="cls-4" transform="translate(2.943 9.529)"/>
+                <path id="Path_8_Copy_2" d="M0 .572h9.875" class="cls-4" transform="translate(2.943 11.86)"/>
+            </g>
+        </g>
+    </g>
+</svg>
