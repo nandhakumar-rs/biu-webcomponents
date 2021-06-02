@@ -13,6 +13,7 @@
 
   &__icon {
     margin: 0 8px;
+    cursor: pointer;
   }
 
   &__label {
@@ -54,6 +55,19 @@
     align-items: center;
     top: 40px;
     z-index: 1000;
+    transition: 0.3s all ease;
+
+
+    &--show {
+      opacity: 1;
+      transform:scale(1) translate(0,0);
+    }
+
+    &--hide {
+      opacity: 0;
+      transform:scale(0) translate(350px,-350px);
+      z-index: -1;
+    }
   }
 
   &__panel-header {
@@ -95,6 +109,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.3s all ease;
+    &:hover,
+    &--active {
+      background: rgba($color: #78cde6, $alpha: 1) ;
+    }
   }
 
   &__date-text {

@@ -23,10 +23,21 @@ export namespace Components {
         "checked"?: boolean;
         "label"?: string;
     }
+    interface BiuDateBar {
+        "days"?: number;
+        "daysLabel"?: string[];
+        "eventDates"?: string;
+        "label"?: string;
+        "monthsLabel"?: string[];
+    }
     interface BiuDropdown {
         "icon"?: string;
         "label"?: string;
         "options"?: string | object | any;
+    }
+    interface BiuRoundedButton {
+        "icon"?: string;
+        "label"?: string;
     }
     interface BiuSearchBar {
         "defaultValue"?: string;
@@ -62,11 +73,23 @@ declare global {
         prototype: HTMLBiuCheckboxElement;
         new (): HTMLBiuCheckboxElement;
     };
+    interface HTMLBiuDateBarElement extends Components.BiuDateBar, HTMLStencilElement {
+    }
+    var HTMLBiuDateBarElement: {
+        prototype: HTMLBiuDateBarElement;
+        new (): HTMLBiuDateBarElement;
+    };
     interface HTMLBiuDropdownElement extends Components.BiuDropdown, HTMLStencilElement {
     }
     var HTMLBiuDropdownElement: {
         prototype: HTMLBiuDropdownElement;
         new (): HTMLBiuDropdownElement;
+    };
+    interface HTMLBiuRoundedButtonElement extends Components.BiuRoundedButton, HTMLStencilElement {
+    }
+    var HTMLBiuRoundedButtonElement: {
+        prototype: HTMLBiuRoundedButtonElement;
+        new (): HTMLBiuRoundedButtonElement;
     };
     interface HTMLBiuSearchBarElement extends Components.BiuSearchBar, HTMLStencilElement {
     }
@@ -85,7 +108,9 @@ declare global {
         "biu-button": HTMLBiuButtonElement;
         "biu-calendar": HTMLBiuCalendarElement;
         "biu-checkbox": HTMLBiuCheckboxElement;
+        "biu-date-bar": HTMLBiuDateBarElement;
         "biu-dropdown": HTMLBiuDropdownElement;
+        "biu-rounded-button": HTMLBiuRoundedButtonElement;
         "biu-search-bar": HTMLBiuSearchBarElement;
         "biu-select": HTMLBiuSelectElement;
     }
@@ -112,15 +137,29 @@ declare namespace LocalJSX {
         "label"?: string;
         "onBiuOnCheck"?: (event: CustomEvent<any>) => void;
     }
+    interface BiuDateBar {
+        "days"?: number;
+        "daysLabel"?: string[];
+        "eventDates"?: string;
+        "label"?: string;
+        "monthsLabel"?: string[];
+        "onBiuOnClick"?: (event: CustomEvent<any>) => void;
+    }
     interface BiuDropdown {
         "icon"?: string;
         "label"?: string;
         "onBiuOnOptionSelect"?: (event: CustomEvent<any>) => void;
         "options"?: string | object | any;
     }
+    interface BiuRoundedButton {
+        "icon"?: string;
+        "label"?: string;
+        "onBiuOnClick"?: (event: CustomEvent<any>) => void;
+    }
     interface BiuSearchBar {
         "defaultValue"?: string;
         "onBiuOnChange"?: (event: CustomEvent<any>) => void;
+        "onBiuOnReset"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
     }
     interface BiuSelect {
@@ -133,7 +172,9 @@ declare namespace LocalJSX {
         "biu-button": BiuButton;
         "biu-calendar": BiuCalendar;
         "biu-checkbox": BiuCheckbox;
+        "biu-date-bar": BiuDateBar;
         "biu-dropdown": BiuDropdown;
+        "biu-rounded-button": BiuRoundedButton;
         "biu-search-bar": BiuSearchBar;
         "biu-select": BiuSelect;
     }
@@ -146,7 +187,9 @@ declare module "@stencil/core" {
             "biu-button": LocalJSX.BiuButton & JSXBase.HTMLAttributes<HTMLBiuButtonElement>;
             "biu-calendar": LocalJSX.BiuCalendar & JSXBase.HTMLAttributes<HTMLBiuCalendarElement>;
             "biu-checkbox": LocalJSX.BiuCheckbox & JSXBase.HTMLAttributes<HTMLBiuCheckboxElement>;
+            "biu-date-bar": LocalJSX.BiuDateBar & JSXBase.HTMLAttributes<HTMLBiuDateBarElement>;
             "biu-dropdown": LocalJSX.BiuDropdown & JSXBase.HTMLAttributes<HTMLBiuDropdownElement>;
+            "biu-rounded-button": LocalJSX.BiuRoundedButton & JSXBase.HTMLAttributes<HTMLBiuRoundedButtonElement>;
             "biu-search-bar": LocalJSX.BiuSearchBar & JSXBase.HTMLAttributes<HTMLBiuSearchBarElement>;
             "biu-select": LocalJSX.BiuSelect & JSXBase.HTMLAttributes<HTMLBiuSelectElement>;
         }

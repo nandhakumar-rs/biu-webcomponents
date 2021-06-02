@@ -24,7 +24,7 @@ export class BiuSelect {
 
   componentDidLoad() {
     this.selectedValue = this.defaultValue;
-    this.optionList = JSON.parse(this.options)
+    this.optionList = typeof this.options === 'string' ? JSON.parse(this.options) : this.options
 
     document.addEventListener('click', event => {
       if (event.target !== this.optionElement && event.target !== this.selectElement) {

@@ -1,0 +1,97 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.biu-date-bar {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+
+  &__nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    top: 99%;
+    transform: translateY(-99%);
+  }
+
+  &__bar {
+    width: 100%;
+    height: 1px;
+    background-color: #01280f;
+
+  }
+
+  &__icon {
+      cursor: pointer;
+    &--left {
+      transform: rotate(180deg);
+    }
+    &--right {}
+  }
+
+  &__dates {
+    display: flex;
+  }
+
+  &__date-view {
+      z-index: 100;
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+
+    &:first-child {
+      margin-left: 48px;
+    }
+
+    &:last-child {
+      margin-right: 48px;
+    }
+
+    &--date {
+      font-size: 40px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.8;
+      letter-spacing: normal;
+      text-align: center;
+      color: #01280f;
+      margin-bottom: 8px;
+    }
+
+    &--label {
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.8;
+      letter-spacing: normal;
+      text-align: center;
+      color: #01280f;
+      margin: 0;
+    }
+  }
+
+  &__indicator {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin: 4px 0;
+
+    &--show {
+        border: solid 1px #01280f;
+        background-color: #78cde6;
+    }
+    &--hide {
+        border: solid 1px transparent;
+        background-color: transparent;
+    }
+
+  }
+
+}

@@ -17,6 +17,7 @@ export class BiuButton {
   render() {
     return (
       <div class="biu-button" onClick={this._onClick}>
+        <div class="biu-button__highlight"></div>
         <p class="biu-button__label">{this.label}</p>
       </div>
     );

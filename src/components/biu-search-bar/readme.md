@@ -18,6 +18,7 @@
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `biuOnChange` |             | `CustomEvent<any>` |
+| `biuOnReset`  |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

@@ -122,6 +122,14 @@ export class BiuCalendar {
     this.isCalendarActive = this.showCalendar;
   };
 
+  _checkIfDateIsCurrentDate = date => {
+    if (date) {
+      return `${date}/${this.currentMonth}/${this.currentYear}` === moment().format('D/M/YYYY');
+    }
+
+    return false;
+  };
+
   render() {
     return (
       <div class="biu-calendar">
@@ -130,14 +138,14 @@ export class BiuCalendar {
           <div class={`biu-calendar__label-highlight ${this.isCalendarActive ? 'biu-calendar__label-highlight--active' : 'biu-calendar__label-highlight--inactive'}`}></div>
         </p>
         <img class="biu-calendar__icon" src={CalendarIcon} />
-        {this.showCalendar && (
-          <div class="biu-calendar__panel">
+
+          <div class={`biu-calendar__panel ${this.showCalendar ? 'biu-calendar__panel--show': 'biu-calendar__panel--hide'}`}>
             <div class="biu-calendar__panel-header">
-              <img src={LeftArrow} onClick={this._previousMonth} />
+              <img class="biu-calendar__icon"  src={LeftArrow} onClick={this._previousMonth} />
               <p class="biu-calendar__panel-header-label">
                 {this.currentYear} {this.monthHeaders[this.currentMonth - 1]}
               </p>
-              <img onClick={this._nextMonth} src={RightArrow} />
+              <img class="biu-calendar__icon"  onClick={this._nextMonth} src={RightArrow} />
             </div>
             <div class="biu-calendar__dates">
               {this.dayHeaders.map(dayHeader => (
@@ -149,14 +157,16 @@ export class BiuCalendar {
               {this.dates.length > 0 &&
                 this.dates.map(date => {
                   return (
-                    <div class={`biu-calendar__date ${this._checkIfDateIsSelected(date)} ${this._checkIfDateIsBetween(date)}`} onClick={() => void this._setDate(date)}>
+                    <div
+                      class={`biu-calendar__date ${this._checkIfDateIsCurrentDate(date) ? 'biu-calendar__date--active': ''} ${this._checkIfDateIsSelected(date)} ${this._checkIfDateIsBetween(date)}`}
+                      onClick={() => void this._setDate(date)}
+                    >
                       <p class="biu-calendar__date-text">{date ? date : ''}</p>
                     </div>
                   );
                 })}
             </div>
           </div>
-        )}
       </div>
     );
   }

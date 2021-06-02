@@ -19,6 +19,24 @@ export const getDatesForMonth = (month, year) => {
   return dates;
 };
 
+export const getDatesForNextNDays = (startDate, days, events) => {
+  let dates = [];
+  let counter = 0;
+  while (counter < days) {
+    dates.push({
+      date: moment(startDate).add(counter,'day').get('date'),
+      month: moment(startDate).add(counter,'day').get('month'),
+      year: moment(startDate).add(counter,'day').get('year'),
+      day: moment(startDate).add(counter,'day').get('day'),
+      hasEvent: events.includes(moment(startDate).add(counter,'day').format("DD/MM/YYYY")),
+    });
+    counter++;
+  }
+  return dates;
+};
+
+
+
 export const isDateBetween = (currentDate, startDate, endDate, month, year) => {
   const dateBetween = getMomentDate(currentDate, month, year);
   return dateBetween >= moment(startDate, 'DD/MM/YYYY') && dateBetween <= moment(endDate, 'DD/MM/YYYY');
